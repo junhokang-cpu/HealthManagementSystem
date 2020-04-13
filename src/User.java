@@ -18,10 +18,12 @@ public class User {
 	}
 	
 	public void PrintInfo() {
+		System.out.println("--------------------------------");
 		System.out.println("Your name is "+ name);
 		System.out.println("Your User code is "+ code);
 		System.out.println("Your age is "+ age + "years old");
 		System.out.println("Your weight is "+ weight + "kg");
 		System.out.println("Your goal is "+ goal + "kg");
+		System.out.println("--------------------------------");
 	}
 }

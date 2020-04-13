@@ -14,8 +14,10 @@ public class Calories {
 
 	
 	public void InfoCalo() {
+		System.out.println("--------------------------------");
 		System.out.println("You ate :"+ food);
 		System.out.println("Total calories are "+calories+"kcals");
+		System.out.println("--------------------------------");
 		
 	}
 	

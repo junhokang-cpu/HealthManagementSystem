@@ -15,8 +15,10 @@ public class Exercise {
 	
 	public void InfoExer() {
 		double total = consume * time;
+		System.out.println("--------------------------------");
 		System.out.println("You exercised " + move+ "and" + time + "hour(s)");
 		System.out.println("You consumed  "+ total +"kcals");
+		System.out.println("--------------------------------");
 	}
 	
 }

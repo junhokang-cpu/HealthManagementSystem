@@ -7,7 +7,7 @@ public class MenuManager {
 		selection = -1;
 		UserManagement usermanage = new UserManagement(scan);
 		
-		while(selection !=6 ) {
+		while(selection !=7 ) {
 			
 		System.out.println(" 式式式式式式式式式式式式 MENU  式式式式式式式式式式式");
 		System.out.println("弛  1.  Add User's information  弛");
@@ -15,7 +15,8 @@ public class MenuManager {
 		System.out.println("弛  3.        Exercise          弛");    
 		System.out.println("弛  4.  Edit User's information 弛");    
 		System.out.println("弛  5.  View User's information 弛");
-		System.out.println("弛  6.          Exit            弛");
+		System.out.println("弛  6.Delete User's information 弛");
+		System.out.println("弛  7.          Exit            弛");
 		System.out.println(" 式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式 ");
 		System.out.println("Select the number \"1~6\"");
 		System.out.println("\n");
@@ -35,6 +36,9 @@ public class MenuManager {
 		}
 		if(selection ==5) {
 			usermanage.viewall();
+		}
+		if(selection ==6) {
+			usermanage.delete();
 		}
 		else
 			continue;
