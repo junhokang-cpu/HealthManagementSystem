@@ -1,4 +1,8 @@
 import java.util.Scanner;
+
+import User.AdultUser;
+import User.User;
+
 import java.util.ArrayList;
 
 public class UserManagement {
@@ -13,21 +17,43 @@ public class UserManagement {
 
 	
 	public void addUser() {
-		User user = new User();
-		System.out.println("Add User's Name : ");
-		user.name = scan.nextLine();
-		user.name = scan.nextLine();
-		System.out.println("Add User code : ");
-		user.code = scan.nextInt();
-		System.out.println("Add User's Age");
-		user.age = scan.nextInt();
-		System.out.println("Add User's weight");
-		user.weight = scan.nextDouble();
-		System.out.println("Enter your goal");
-		user.goal = scan.nextDouble();
-		user.PrintInfo();
-		System.out.println("\n");
-		users.add(user);
+		int kind =0;
+		User user;
+		while(kind != 1 && kind !=2 && kind !=3 && kind !=4) {
+		System.out.println("Select User Kind ");
+		System.out.println("1.Child");
+		System.out.println("2.Teen");
+		System.out.println("3.Adult");
+		System.out.println("4.Senior");
+		kind = scan.nextInt();
+		if(kind == 1) {
+			user = new User();
+			user.getUserInput(scan);
+			users.add(user);
+			break;
+		}
+		else if(kind == 2) {
+			user = new User();
+			user.getUserInput(scan);
+			users.add(user);
+			break;
+		}
+		if(kind == 3) {
+			user = new AdultUser();
+			user.getUserInput(scan);
+			users.add(user);
+			break;
+		}
+		if(kind == 4) {
+			user = new User();
+			user.getUserInput(scan);
+			users.add(user);
+			break;
+		}
+		else {
+			System.out.println("Select num for User Kind between 1 and 2");
+		}
+		}
 			
 		}
 	public void addcals() {	
@@ -64,11 +90,11 @@ public class UserManagement {
 		
 		public void editUser() {
 			System.out.println("User's code ? :");
-			int code = scan.nextInt();
+			int Usercode = scan.nextInt();
 			for (int i = 0; i<users.size(); i++) {
 				
 			User user = users.get(i);
-			if (user.code == code) {
+			if (user.getCode() == Usercode) {
 				
 			int selection;
 			selection = -1;
@@ -89,24 +115,30 @@ public class UserManagement {
 			
 			if(selection == 1) {
 				System.out.println("Add User's Name : ");
-				user.name = scan.nextLine();
-				user.name = scan.nextLine();
+				String name = scan.nextLine();
+				name = scan.nextLine();
+				user.setName(name);
 			}
 			if(selection ==2) {
 				System.out.println("Add User code : ");
-				user.code = scan.nextInt();
+				int code = scan.nextInt();
+				user.setCode(code);
 		  }
 			if(selection ==3) {
 				System.out.println("Add User's Age");
-				user.age = scan.nextInt();
+				int age = scan.nextInt();
+				user.setAge(age);
 			}
 			if(selection ==4) {
 				System.out.println("Add User's weight");
-				user.weight = scan.nextDouble();
+				double weight = scan.nextDouble();
+				user.setWeight(weight);
+				
 			}
 			if(selection ==5) {
 				System.out.println("Enter your goal");
-				user.goal = scan.nextDouble();
+				Double goal = scan.nextDouble();
+				user.setGoal(goal);
 			}
 			else
 				continue;
@@ -139,7 +171,7 @@ public class UserManagement {
 			int code =  scan.nextInt();
 			int index = -1;
 			for(int i=0; i<users.size(); i++){
-				if (users.get(i).code == code) {
+				if (users.get(i).getCode() == code) {
 					index = i;
 					break;
 				}
