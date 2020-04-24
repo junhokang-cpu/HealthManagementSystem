@@ -1,22 +1,24 @@
 import java.util.Scanner;
 
-
+import Calories.Calories;
+import Calories.GenderKind;
+import Calories.MaleCal;
 import User.ChildUser;
 import User.SeniorUser;
 import User.TeenUser;
 import User.User;
 import User.UserKind;
-
 import java.util.ArrayList;
 
 public class UserManagement {
-	Scanner scan;
+	Scanner scan,scan2;
 	ArrayList<User> users = new ArrayList<User>();
 	ArrayList<Calories> cals = new ArrayList<Calories>();
 	ArrayList<Exercise> exercises = new ArrayList<Exercise>();
 	Exercise exercise;
 	UserManagement(Scanner scan){
-		this.scan = scan;			
+		this.scan = scan;
+		this.scan2 = scan;
 }
 
 	
@@ -61,17 +63,31 @@ public class UserManagement {
 			
 		}
 	public void addcals() {	
-			Calories cal = new Calories();
-			
-			
-			System.out.println("Add what you consumed");
-			cal.food = scan.nextLine();
-			cal.food = scan.nextLine();
-			System.out.println("Calories?");
-			cal.calories = scan.nextDouble();
-			cal.InfoCalo();
-			cals.add(cal);
-	}
+			Calories cal ;
+			String borg = "NONE";
+			System.out.println("A.Female");
+			System.out.println("B.Male");
+			borg = scan2.next();
+			while(borg !="A" && borg !="B") {
+				if (borg.equals("A")) {
+					cal = new Calories(GenderKind.Female);
+					cal.getUserInput(scan2);
+					cals.add(cal);
+					break;
+				}
+				if(borg.equals("B")) {
+					cal = new MaleCal(GenderKind.Male);
+					cal.getUserInput(scan2);
+					cals.add(cal);
+					break;
+				}
+				else {
+					System.out.println("Select num for between 1 and 2");
+				}
+			}
+			}
+
+		
 		public void addexercise() {	
 			Exercise exercise = new Exercise();
 			
