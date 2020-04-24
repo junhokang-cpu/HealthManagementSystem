@@ -3,6 +3,9 @@ package User;
 import java.util.Scanner;
 
 public class SeniorUser extends User {
+	public SeniorUser(UserKind kind) {
+		super(kind);
+	}
 	
 	protected String medicine;
 	
@@ -24,7 +27,7 @@ public class SeniorUser extends User {
 		this.setCode(code);
 		char answer = 'x';
 		while(answer != 'y' && answer != 'Y' && answer != 'n' && answer !='N') {
-		System.out.println("Do you consume medicine? ");
+		System.out.println("Do you consume medicine? (Y/N)");
 			answer = scan.next().charAt(0);
 		if ( answer == 'y' || answer == 'Y') {
 			System.out.println("Input the medicine");
@@ -53,6 +56,24 @@ public class SeniorUser extends User {
 		this.setGoal(goal);
 	}
 	public void PrintInfo() {
+		String skind = "none";
+		switch(this.kind){
+		
+		case Adult:
+			skind = "Adult";
+			break;
+		case Senior:
+			skind = "Senior";
+			break;
+		case Teen:
+			skind = "Teen";
+			break;
+		case Child:
+			skind = "Child";
+			break;
+		default:	
+		}
+		System.out.println("Type : "+ skind);
 		System.out.println("--------------------------------");
 		System.out.println("Your name is "+ name);
 		System.out.println("Your User code is "+ code);

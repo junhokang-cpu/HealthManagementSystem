@@ -60,6 +60,9 @@ public class User {
 	public User(){
 		
 	}
+	public User(UserKind kind){
+		this.kind = kind;
+	}
 	
 	public User(String name,int age,double weight,double goal,int code){
 		this.name = name;
@@ -68,8 +71,34 @@ public class User {
 		this.weight = weight;
 		this.code = code;
 	}
+	public User(UserKind kind ,String name,int age,double weight,double goal,int code){
+		this.kind = kind;
+		this.name = name;
+		this.goal = goal;
+		this.age = age;
+		this.weight = weight;
+		this.code = code;
+	}
 	
 	public void PrintInfo() {
+		String skind = "none";
+		switch(this.kind){
+		
+		case Adult:
+			skind = "Adult";
+			break;
+		case Senior:
+			skind = "Senior";
+			break;
+		case Teen:
+			skind = "Teen";
+			break;
+		case Child:
+			skind = "Child";
+			break;
+		default:	
+		}
+		System.out.println("Type : "+ skind);
 		System.out.println("--------------------------------");
 		System.out.println("Your name is "+ name);
 		System.out.println("Your User code is "+ code);

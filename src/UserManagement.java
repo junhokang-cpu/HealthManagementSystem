@@ -1,7 +1,11 @@
 import java.util.Scanner;
 
-import User.AdultUser;
+
+import User.ChildUser;
+import User.SeniorUser;
+import User.TeenUser;
 import User.User;
+import User.UserKind;
 
 import java.util.ArrayList;
 
@@ -21,37 +25,37 @@ public class UserManagement {
 		User user;
 		while(kind != 1 && kind !=2 && kind !=3 && kind !=4) {
 		System.out.println("Select User Kind ");
-		System.out.println("1.Child");
-		System.out.println("2.Teen");
-		System.out.println("3.Adult");
-		System.out.println("4.Senior");
+		System.out.println("1.Adult");
+		System.out.println("2.Senior");
+		System.out.println("3.Teen");
+		System.out.println("4.Child");
 		kind = scan.nextInt();
 		if(kind == 1) {
-			user = new User();
+			user = new User(UserKind.Adult);
 			user.getUserInput(scan);
 			users.add(user);
 			break;
 		}
 		else if(kind == 2) {
-			user = new User();
+			user = new SeniorUser(UserKind.Senior);
 			user.getUserInput(scan);
 			users.add(user);
 			break;
 		}
 		if(kind == 3) {
-			user = new AdultUser();
+			user = new TeenUser(UserKind.Teen);
 			user.getUserInput(scan);
 			users.add(user);
 			break;
 		}
 		if(kind == 4) {
-			user = new User();
+			user = new ChildUser(UserKind.Child);
 			user.getUserInput(scan);
 			users.add(user);
 			break;
 		}
 		else {
-			System.out.println("Select num for User Kind between 1 and 2");
+			System.out.println("Select num for User Kind between 1 and 4");
 		}
 		}
 			
