@@ -7,4 +7,6 @@ public interface CaloInput {
 	public void InfoCalo();
 	public void setConsume(Scanner scan2);
 	public void setCalories(Scanner scan2);
+	
+	
 }

@@ -31,7 +31,7 @@ public class ChildUser extends User{
 			
 		String skind = getKindString();
 		System.out.println("Type : "+ skind);
-		System.out.println("--------------------------------");
+		System.out.println("---------------------------------");
 		System.out.println("Your name is "+ name);
 		System.out.println("Your User code is "+ code);
 		System.out.println("Your age is "+ age + "years old");

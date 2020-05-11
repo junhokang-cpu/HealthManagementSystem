@@ -214,7 +214,7 @@ public class UserManagement {
 			System.out.println("弛  5.     Edit your goal       弛");    
 			System.out.println("弛  6.          Exit            弛");
 			System.out.println(" 式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式 ");
-			System.out.println("Select the number \"1~5\"");
+			System.out.println("Select the number \"1~6\"");
 			System.out.println("\n");
 		}
 }

@@ -53,7 +53,7 @@ public abstract class Calories implements CaloInput {
 		setCalories(scan2);
 }
 	public void setConsume(Scanner scan2) {
-		System.out.println("Add what you consumed");
+		System.out.println("Add what you consume");
 		String food = scan2.nextLine();
 		food = scan2.nextLine();
 		this.setFood(food);

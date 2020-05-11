@@ -5,4 +5,6 @@ public enum UserKind {
 	Teen,
 	Adult,
 	Senior
+	
+	
 }

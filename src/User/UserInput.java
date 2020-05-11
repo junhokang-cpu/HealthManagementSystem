@@ -17,4 +17,6 @@ public interface UserInput {
 	public void setUserWeight(Scanner scan);
 	public void setUserGoal(Scanner scan);
 	
+	
+	
 }
