@@ -1,7 +1,7 @@
 package Calories;
 import java.util.Scanner;
 
-public class Calories {
+public abstract class Calories implements CaloInput {
 	protected GenderKind borg = GenderKind.Female;
 	
 	public GenderKind getBorg() {
@@ -46,35 +46,22 @@ public class Calories {
 	}
 
 	
-	public void InfoCalo() {
-		String a = "none";
-		switch(this.borg){
-			
-		case Female:
-			a = "Female";
-		case Male:
-			a = "Male";
-		}
-		System.out.println("Type : " +a);
-		System.out.println("--------------------------------");
-		System.out.println("Your basal metabolism is  1300 kcals");
-		System.out.println("You ate :"+ food);
-		System.out.println("Total calories are "+calories+"kcals");
-		System.out.println("--------------------------------");
-		
-	}
+	public abstract void InfoCalo() ;
 	
 	public void getUserInput(Scanner scan2) {
-		System.out.println("Your basal metabolism is  1300 kcals");
+		setConsume(scan2);
+		setCalories(scan2);
+}
+	public void setConsume(Scanner scan2) {
 		System.out.println("Add what you consumed");
 		String food = scan2.nextLine();
 		food = scan2.nextLine();
 		this.setFood(food);
+	}
+	public void setCalories(Scanner scan2) {
 		System.out.println("Calories?");
 		Double calories = scan2.nextDouble();
 		this.setCalories(calories);
-		
-}
-		
+	}
 }
 

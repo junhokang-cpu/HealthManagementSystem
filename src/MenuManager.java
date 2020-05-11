@@ -8,7 +8,34 @@ public class MenuManager {
 		UserManagement usermanage = new UserManagement(scan);
 		
 		while(selection !=7 ) {
-			
+		showMenu() ;
+		selection = scan.nextInt();
+		
+		switch(selection) {
+		case 1 :
+			usermanage.addUser();
+			break;
+		case 2:
+			usermanage.addcals();
+			break;
+		case 3:
+			usermanage.addexercise();
+			break;
+		case 4:
+			usermanage.editUser();
+			break;
+		case 5:
+			usermanage.viewall();
+			break;
+		case 6:
+			usermanage.delete();
+			break;
+		default:
+			continue;
+		}
+		}
+	}
+	public static void showMenu() {
 		System.out.println(" 式式式式式式式式式式式式 MENU  式式式式式式式式式式式");
 		System.out.println("弛  1.  Add User's information  弛");
 		System.out.println("弛  2.        Calories          弛");   
@@ -20,28 +47,6 @@ public class MenuManager {
 		System.out.println(" 式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式 ");
 		System.out.println("Select the number \"1~6\"");
 		System.out.println("\n");
-		selection = scan.nextInt();
-		if(selection == 1) {
-			usermanage.addUser();
-		}
-		if(selection ==2) {
-			usermanage.addcals();
-	
-	  }
-		if(selection ==3) {
-			usermanage.addexercise();
-		}
-		if(selection ==4) {
-			usermanage.editUser();
-		}
-		if(selection ==5) {
-			usermanage.viewall();
-		}
-		if(selection ==6) {
-			usermanage.delete();
-		}
-		else
-			continue;
-		}
 	}
 }
+	
