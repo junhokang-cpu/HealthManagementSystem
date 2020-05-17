@@ -21,7 +21,7 @@ public abstract class Calories implements CaloInput {
 	public String getFood() {
 		return food;
 	}
-	public void setFood(String food) {
+	public void setFood(String food)  {
 		this.food = food;
 	}
 

@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class MenuManager {
 
@@ -7,7 +8,15 @@ public class MenuManager {
 		selection = -1;
 		UserManagement usermanage = new UserManagement(scan);
 		
+		selectMenu(scan, usermanage);
+		}
+	
+	public static void selectMenu(Scanner scan, UserManagement usermanage) {
+		int selection;
+		selection = -1;
+		
 		while(selection !=7 ) {
+			try {
 		showMenu() ;
 		selection = scan.nextInt();
 		
@@ -32,9 +41,20 @@ public class MenuManager {
 			break;
 		default:
 			continue;
-		}
+	
+				}
+			} 
+		catch(InputMismatchException e) {
+				System.out.println("Enter the number between 1~6");
+				if(scan.hasNext()) {
+					scan.next();
+				}
+				selection = -1;
+			}
+		
 		}
 	}
+	
 	public static void showMenu() {
 		System.out.println(" 式式式式式式式式式式式式 MENU  式式式式式式式式式式式");
 		System.out.println("弛  1.  Add User's information  弛");

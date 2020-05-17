@@ -1,6 +1,8 @@
 package User;
 
 import java.util.Scanner;
+
+import Exceptions.HyperException;
 	
 public class ChildUser extends User{
 	
@@ -14,7 +16,10 @@ public class ChildUser extends User{
 	public String getPhone() {
 		return phone;
 	}
-	public void setPhone(String phone) {
+	public void setPhone(String phone) throws HyperException {
+		if(!phone.contains("-") && !phone.equals("")){
+			throw new HyperException();
+		}
 		this.phone = phone;
 	}
 
@@ -63,17 +68,27 @@ public class ChildUser extends User{
 	
 	
 	public void setUserPhone(Scanner scan){
+		String phone = "NULL";
+		while(!phone.contains("-") && !phone.equals("")) {
+			
 		System.out.println("Input the phone number");
-		String phone = scan.next();
+		phone = scan.next();
+		try {
 		this.setPhone(phone);
+		}
+		catch(HyperException e) {
+			System.out.println("Please use Hyper -");
+		}
 	}
-	
+		
+	}
 	
 	public void setYorN(Scanner scan) {
 		char answer = 'x';
 		while(answer != 'y' && answer != 'Y' && answer != 'n' && answer !='N') {
 		System.out.println("Do you have parent's phone number? (Y/N)");
 			answer = scan.next().charAt(0);
+		try {
 		if ( answer == 'y' || answer == 'Y') {
 			setUserPhone(scan);
 			break;
@@ -84,7 +99,10 @@ public class ChildUser extends User{
 		}
 		else {
 			}
-		
+		}
+		catch(HyperException e){
+			
+		}
 		}
 	}
 }

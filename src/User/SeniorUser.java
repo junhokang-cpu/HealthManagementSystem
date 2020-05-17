@@ -2,6 +2,10 @@ package User;
 
 import java.util.Scanner;
 
+import Exceptions.HyperException;
+
+
+
 public class SeniorUser extends User  {
 	public SeniorUser(UserKind kind) {
 		super(kind);
@@ -13,7 +17,11 @@ public class SeniorUser extends User  {
 	public String getMedicine() {
 		return medicine;
 	}
-	public void setMedicine(String medicine) {
+
+	public void setMedicine(String medicine) throws HyperException{
+		if(medicine.contains("-") && !medicine.equals("")) {
+			throw new HyperException();
+		}
 		this.medicine = medicine;
 	}
 	
@@ -61,9 +69,17 @@ public class SeniorUser extends User  {
 	
 	
 	public void setUserMedicine(Scanner scan) {
+		String medicine ="NULL-";
+		while(medicine.contains("-") &&  !medicine.equals("")) {
 		System.out.println("Input the medicine");
-		String phone = scan.next();
-		this.setMedicine(phone);
+		medicine = scan.next();
+		try {
+		this.setMedicine(medicine);
+		}
+		catch(HyperException e){
+			System.out.println("Don't use Hyper -");
+		}
+	}
 	}
 	
 	
@@ -72,6 +88,7 @@ public class SeniorUser extends User  {
 		while(answer != 'y' && answer != 'Y' && answer != 'n' && answer !='N') {
 		System.out.println("Do you consume medicine? (Y/N)");
 			answer = scan.next().charAt(0);
+			try {
 		if ( answer == 'y' || answer == 'Y') {
 			setUserMedicine(scan);
 			break;
@@ -82,6 +99,13 @@ public class SeniorUser extends User  {
 		}
 		else {
 			}
+			}
+			catch(HyperException e) {
+			
+			}
+			
+		
 		}
 	}
 }
+

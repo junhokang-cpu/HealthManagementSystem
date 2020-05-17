@@ -13,6 +13,7 @@ import User.User;
 import User.UserInput;
 import User.UserKind;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 public class UserManagement {
 	Scanner scan,scan2;
@@ -30,6 +31,7 @@ public class UserManagement {
 		int kind =0;
 		UserInput userInput;
 		while(kind != 1 && kind !=2 && kind !=3 && kind !=4) {
+			try {
 		System.out.println("Select User Kind ");
 		System.out.println("1.Adult");
 		System.out.println("2.Senior");
@@ -63,6 +65,15 @@ public class UserManagement {
 		else {
 			System.out.println("Select num for User Kind between 1 and 4");
 		}
+			}
+		catch(InputMismatchException e) {
+			
+			System.out.println("Enter the number 1~4");
+			if(scan.hasNext()) {
+				scan.next();
+			}
+			kind = -1;
+		}
 		}
 			
 		}
@@ -73,6 +84,7 @@ public class UserManagement {
 			System.out.println("B.Male");
 			borg = scan2.next();
 			while(borg !="A" && borg !="B") {
+
 				if (borg.equals("A")) {
 					caloInput = new FemaleCal(GenderKind.Female);
 					caloInput.getUserInput(scan2);
@@ -85,11 +97,9 @@ public class UserManagement {
 					cals.add(caloInput);
 					break;
 				}
-				else {
-					System.out.println("Select num for between 1 and 2");
+			}
 				}
-			}
-			}
+				
 
 		
 		public void addexercise() {	
@@ -174,7 +184,7 @@ public class UserManagement {
 			System.out.println("Your User Code? : ");
 			int code =  scan.nextInt();
 			int index = findIndex(code);
-			removefromUsers(index, code);	
+			removefromUsers(index,code);	
 		}
 		
 		public int findIndex(int code) {
