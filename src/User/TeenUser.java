@@ -28,6 +28,8 @@ public class TeenUser extends User {
 		setUserAge(scan);
 		setUserWeight(scan);
 		setUserGoal(scan);
+		setUserExercises(scan);
+		setUserCalories(scan);
 	}
 	
 	
@@ -42,6 +44,8 @@ public class TeenUser extends User {
 		System.out.println("You go to " + this.getSchool() + " school" );
 		System.out.println("Your weight is "+ weight + "kg");
 		System.out.println("Your goal is "+ goal + "kg");
+		System.out.println("You consume "+ calories + "calories");
+		System.out.println("You acted "+ exercises);
 		System.out.println("--------------------------------");
 }
 	public String getKindString() {

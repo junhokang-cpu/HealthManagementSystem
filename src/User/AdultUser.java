@@ -14,6 +14,8 @@ public class AdultUser extends User {
 		setUserAge(scan);
 		setUserWeight(scan);
 		setUserGoal(scan);	
+		setUserExercises(scan);
+		setUserCalories(scan);
 	}
 	public void PrintInfo() {
 		String skind = getKindString();
@@ -24,6 +26,8 @@ public class AdultUser extends User {
 		System.out.println("Your age is "+ age + "years old");
 		System.out.println("Your weight is "+ weight + "kg");
 		System.out.println("Your goal is "+ goal + "kg");
+		System.out.println("You consume "+ calories + "calories");
+		System.out.println("You acted "+ exercises);
 		System.out.println("--------------------------------");
 }
 	public String getKindString() {

@@ -1,10 +1,5 @@
 import java.util.Scanner;
 
-import Calories.CaloInput;
-import Calories.Calories;
-import Calories.FemaleCal;
-import Calories.GenderKind;
-import Calories.MaleCal;
 import User.AdultUser;
 import User.ChildUser;
 import User.SeniorUser;
@@ -12,24 +7,31 @@ import User.TeenUser;
 import User.User;
 import User.UserInput;
 import User.UserKind;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 
-public class UserManagement {
-	Scanner scan,scan2;
+public class UserManagement implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7435626570633326140L;
+	
+	transient Scanner scan;
 	ArrayList<UserInput> users = new ArrayList<UserInput>();
-	ArrayList<CaloInput> cals = new ArrayList<CaloInput>();
-	ArrayList<Exercise> exercises = new ArrayList<Exercise>();
-	Exercise exercise;
+
+
 	UserManagement(Scanner scan){
 		this.scan = scan;
-		this.scan2 = scan;
 }
-
+	public void setScanner(Scanner scan) {
+	    this.scan = scan;
+	}
 	
 	public void addUser() {
 		int kind =0;
-		UserInput userInput;
+		UserInput  userInput;
 		while(kind != 1 && kind !=2 && kind !=3 && kind !=4) {
 			try {
 		System.out.println("Select User Kind ");
@@ -77,49 +79,10 @@ public class UserManagement {
 		}
 			
 		}
-	public void addcals() {	
-			CaloInput caloInput ;
-			String borg = "NONE";
-			System.out.println("A.Female");
-			System.out.println("B.Male");
-			borg = scan2.next();
-			while(borg !="A" && borg !="B") {
 
-				if (borg.equals("A")) {
-					caloInput = new FemaleCal(GenderKind.Female);
-					caloInput.getUserInput(scan2);
-					cals.add(caloInput);
-					break;
-				}
-				if(borg.equals("B")) {
-					caloInput = new MaleCal(GenderKind.Male);
-					caloInput.getUserInput(scan2);
-					cals.add(caloInput);
-					break;
-				}
-			}
-				}
-				
 
 		
-		public void addexercise() {	
-			Exercise exercise = new Exercise();
-			
-			System.out.println("Add what you exerciseed");
-			exercise.move = scan.nextLine();
-			exercise.move = scan.nextLine();
-			System.out.println("How much calories you used per hour?");
-			exercise.consume = scan.nextDouble();
-			System.out.println("How many hours did you exercise?");
-			exercise.time = scan.nextInt();
-			exercise.InfoExer();
-			exercises.add(exercise);
-		}
-		
-		
-		// add exercise
-		
-		
+	
 		
 		
 		public void editUser() {
@@ -128,12 +91,13 @@ public class UserManagement {
 			for (int i = 0; i<users.size(); i++) {
 				
 			UserInput userInput = users.get(i);
+		
 			if (userInput.getCode() == Usercode) {
 				
 			int selection;
 			selection = -1;
 			
-			while(selection !=6 ) {
+			while(selection !=8 ) {
 				
 			showEditMenu()	;
 			selection = scan.nextInt();
@@ -152,6 +116,11 @@ public class UserManagement {
 				break;
 			case 5:
 				userInput.setUserGoal(scan);
+			case 6 :
+				userInput.setUserExercises(scan);
+
+			case 7 :
+				userInput.setUserCalories(scan);
 				break;
 			default:
 				continue;
@@ -170,15 +139,9 @@ public class UserManagement {
 			for(int i=0; i<users.size(); i++) {
 				users.get(i).PrintInfo();
 			}
-			for(int j=0; j<cals.size(); j++) {
-				cals.get(j).InfoCalo();
-				
-			}
-			for(int k=0; k<exercises.size(); k++) {
-				exercises.get(k).InfoExer();
+		
 			}
 			
-		}
 			// view User's data
 		public void delete() {
 			System.out.println("Your User Code? : ");
@@ -201,8 +164,6 @@ public class UserManagement {
 		public int removefromUsers(int index, int code) {
 			if (index >=0) {
 				users.remove(index);
-				cals.remove(index);
-				exercises.remove(index);
 				System.out.println("The User's code" + code + " is deleted");
 				return 1;
 			}
@@ -221,10 +182,12 @@ public class UserManagement {
 			System.out.println("弛  2.     Edit your code       弛");   
 			System.out.println("弛  3.     Edit your age        弛");    
 			System.out.println("弛  4.     Edit your weight     弛");    
-			System.out.println("弛  5.     Edit your goal       弛");    
-			System.out.println("弛  6.          Exit            弛");
+			System.out.println("弛  5.     Edit your goal       弛"); 
+			System.out.println("弛  6.     Edit your Exercise   弛"); 
+			System.out.println("弛  7.     Edit your Calories  弛"); 
+			System.out.println("弛  8.          Exit            弛");
 			System.out.println(" 式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式 ");
-			System.out.println("Select the number \"1~6\"");
+			System.out.println("Select the number \"1~8\"");
 			System.out.println("\n");
 		}
 }

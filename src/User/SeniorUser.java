@@ -32,6 +32,8 @@ public class SeniorUser extends User  {
 		setUserAge(scan);
 		setUserWeight(scan);
 		setUserGoal(scan);
+		setUserExercises(scan);
+		setUserCalories(scan);
 
 	}
 	public void PrintInfo() {
@@ -44,6 +46,9 @@ public class SeniorUser extends User  {
 		System.out.println("You consume " + medicine);
 		System.out.println("Your weight is "+ weight + "kg");
 		System.out.println("Your goal is "+ goal + "kg");
+		System.out.println("You consume "+ calories + "calories");
+		System.out.println("You acted "+ exercises);
+		
 		System.out.println("--------------------------------");
 }
 	public String getKindString() {

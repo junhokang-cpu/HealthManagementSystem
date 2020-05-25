@@ -16,6 +16,8 @@ public interface UserInput {
 	public void setUserAge(Scanner scan);
 	public void setUserWeight(Scanner scan);
 	public void setUserGoal(Scanner scan);
+	public void setUserCalories(Scanner scan);
+	public void setUserExercises(Scanner scan);
 	
 	
 	

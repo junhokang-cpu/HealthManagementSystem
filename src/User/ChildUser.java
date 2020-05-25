@@ -31,6 +31,9 @@ public class ChildUser extends User{
 		setUserAge(scan);
 		setUserWeight(scan);	
 		setUserGoal(scan);
+		setUserExercises(scan);
+		
+		setUserCalories(scan);
 	}
 	public void PrintInfo() {
 			
@@ -43,6 +46,8 @@ public class ChildUser extends User{
 		System.out.println("Your parent's phone number is " + this.getPhone());
 		System.out.println("Your weight is "+ weight + "kg");
 		System.out.println("Your goal is "+ goal + "kg");
+		System.out.println("You consume "+ calories + "calories");
+		System.out.println("You acted "+ exercises);
 		System.out.println("--------------------------------");
 }
 	public String getKindString() {
