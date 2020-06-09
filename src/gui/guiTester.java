@@ -3,9 +3,10 @@ package gui;
 public class guiTester {
 
 	public static void main(String[] args) {
+		WindowFrame windowframe = new WindowFrame();
+		
 		//UserAdd add = new UserAdd();
-		//MenuSelction menu = new MenuSelction();
-		Viewer view = new Viewer();
+		//Viewer view = new Viewer();
 
 	}
 

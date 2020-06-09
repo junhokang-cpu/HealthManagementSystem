@@ -6,8 +6,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
-public class UserAdd extends JFrame {
-	public UserAdd() {
+public class UserAdd extends JPanel {
+	WindowFrame frame;
+	public UserAdd(WindowFrame frame) {
+		this.frame = frame;
 		JPanel panel = new JPanel();
 		panel.setLayout(new SpringLayout());
 		//name
@@ -58,9 +60,7 @@ public class UserAdd extends JFrame {
 		panel.add(textEx);
 		
 		SpringUtilities.makeCompactGrid(panel, 7, 2, 6, 6, 6, 6);
-		this.setSize(300,300);
-		this.setContentPane(panel);
-		this.setVisible(true);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.add(panel);
+	
 	}
 }
