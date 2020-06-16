@@ -103,5 +103,15 @@ public class TeenUser extends User {
 	
 		
 	}
+		@Override
+		public String getMedicine() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		@Override
+		public String getPhone() {
+			// TODO Auto-generated method stub
+			return null;
+		}
 }
 

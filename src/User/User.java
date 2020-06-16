@@ -49,7 +49,7 @@ public abstract class User implements UserInput ,Serializable{
 	public void setWeight(double weight) {
 		this.weight = weight;
 	}
-
+	
 	public String getName() {
 		return name;
 	}
@@ -61,13 +61,13 @@ public abstract class User implements UserInput ,Serializable{
 	public void setCalories(int calories) {
 		this.calories = calories;
 	}
-	public int getCalories(int calories) {
+	public int getCalories() {
 		return calories;
 	}
 	public void setExercises(String exercises) {
 		this.exercises = exercises;
 	}
-	public String getExercises(String exercises) {
+	public String getExercises() {
 		return exercises;
 	}
 	

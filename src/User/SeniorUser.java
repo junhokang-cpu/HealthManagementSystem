@@ -112,5 +112,17 @@ public class SeniorUser extends User  {
 		
 		}
 	}
+
+	@Override
+	public String getSchool() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getPhone() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
 

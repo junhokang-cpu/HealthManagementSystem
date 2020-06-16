@@ -1,3 +1,4 @@
+package manage;
 import java.util.Scanner;
 
 import User.AdultUser;
@@ -189,6 +190,14 @@ public class UserManagement implements Serializable {
 			System.out.println(" 式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式 ");
 			System.out.println("Select the number \"1~8\"");
 			System.out.println("\n");
+		}
+		
+		public int size() {
+			return users.size();
+		}
+		
+		public UserInput get(int index) {
+			return (User) users.get(index);
 		}
 }
 

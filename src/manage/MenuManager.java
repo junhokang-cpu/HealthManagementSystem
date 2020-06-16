@@ -1,4 +1,6 @@
+package manage;
 import java.io.FileInputStream;
+
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -7,6 +9,7 @@ import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import gui.WindowFrame;
 import logpack.EventLogger;
 public class MenuManager {
 	static EventLogger logger = new EventLogger("log.txt");
@@ -20,9 +23,9 @@ public class MenuManager {
 			
 		}
 		else {
-			usermanage.setScanner(scan);;
+			usermanage.setScanner(scan);
 		}
-			
+		WindowFrame windowframe = new WindowFrame(usermanage);			
 		selectMenu(scan, usermanage);
 		putObject(usermanage,"Usermanager.ser");
 		}

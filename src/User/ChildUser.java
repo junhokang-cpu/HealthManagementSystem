@@ -110,4 +110,14 @@ public class ChildUser extends User{
 		}
 		}
 	}
+	@Override
+	public String getMedicine() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public String getSchool() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

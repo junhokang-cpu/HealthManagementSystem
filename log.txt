@@ -1,2 +1,2 @@
-5월 25, 2020 3:26:21 오후 logpack.EventLogger log
+6월 16, 2020 9:12:38 오전 logpack.EventLogger log
 정보: add User

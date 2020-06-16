@@ -3,8 +3,13 @@ package gui;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import manage.UserManagement;
 public class WindowFrame extends JFrame {
+	UserManagement usermanage;
 	MenuSelction menu;
+	Viewer view;
+	UserAdd add;
+	
 	public MenuSelction getMenu() {
 		return menu;
 	}
@@ -29,9 +34,6 @@ public class WindowFrame extends JFrame {
 		this.add = add;
 	}
 
-	Viewer view;
-	UserAdd add;
-	
 	public void setupPanel(JPanel panel) {
 		this.getContentPane().removeAll();
 		this.add(panel);
@@ -39,14 +41,15 @@ public class WindowFrame extends JFrame {
 		this.repaint();
 	}
 	
-	public WindowFrame() {
+	public WindowFrame(UserManagement usermanage) {
 		this.setSize(700,300);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.usermanage = usermanage;
 		this.menu = new MenuSelction(this);
 		this.add = new UserAdd(this);
-		this.view = new Viewer(this);
+		this.view = new Viewer(this,this.usermanage);
 		this.setupPanel(menu);
-		
+	
 		this.setVisible(true);
 	}
 }

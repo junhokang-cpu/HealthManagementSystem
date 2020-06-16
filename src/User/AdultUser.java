@@ -50,5 +50,20 @@ public class AdultUser extends User {
 		}
 		return skind;
 	}
+	@Override
+	public String getMedicine() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public String getSchool() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public String getPhone() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 		
 }
